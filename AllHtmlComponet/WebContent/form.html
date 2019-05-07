@@ -1,0 +1,70 @@
+<h1 style="color:red;text-align:center">Personal Details</h1>
+<form action ="formurl" method="POST" align="center" color="black">
+	<table bgcolor="#ffff4d" height =500 width =500 align="center">
+		<tr>
+			<td>Name ::</td>
+			<td><input type ="text" name ="tname" value=""></td>
+		</tr>
+		
+		<tr>
+			<td>AGE ::</td>
+			<td><input type ="password" name ="tage" value=""></td>
+		</tr>
+		
+		<tr>
+			<td>Gender ::</td>
+			<td colspan="2"><input type ="radio" name ="gen" value="m">Male&nbsp;
+			<input type ="radio" name ="gen" value="f">FeMale</td>
+		</tr>
+		
+		<tr>
+			<td>Address ::</td>
+			<td>
+				<textarea name ="taddress" rows ="4" cols ="20" value="">Enter Address
+				</textarea>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Maritial status :: </td>
+			<td><input type ="checkbox" name ="ms" value="married">Married</td>
+		</tr>
+		
+		<tr>
+			<td>Qualification :: </td>
+			<td>
+				<select name="qlfy">
+					<option>select qualification</option>
+					<option value ="Btech">Btech</option>
+					<option value="MBBS">Medical</option>
+					<option value="B.A">Arts</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Course</td>
+			<td>
+				<select name ="crs" width=250 size="3" multiple="multiple">
+					<option value ="java">java package</option>
+					<option value =".net">.net package</option>
+					<option value ="testing">Testing package</option>	
+				</select>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Hobbies</td>
+			<td>
+				<input type="checkbox" name="hb" value="read" checked/>Reading
+				<input type="checkbox" name="hb" value="satmps"/>StampCollection
+				<input type="checkbox" name="hb" value="roaming"/>Traveling
+			</td>
+		</tr>
+		
+		<tr>
+		  <td colspan="2" align="center"><input type ="submit" value="submit"/>&nbsp;&nbsp;&nbsp;&nbsp;
+		  <input type ="reset" value="reset"/>
+		 </td>
+		</tr>
+	</table>
+</form>
