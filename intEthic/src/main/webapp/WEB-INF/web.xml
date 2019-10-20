@@ -1,0 +1,57 @@
+
+<web-app>
+<!--WELCOME FILE CFGS -->
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<!--  HOME PAGE CFGS -->
+	<servlet>
+		<servlet-name>home</servlet-name>
+		<jsp-file>/home.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>home</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>result</servlet-name>
+		<jsp-file>/view_result.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>result</servlet-name>
+		<url-pattern>/result</url-pattern>
+	</servlet-mapping>
+	
+	<!-- logout jsp -->
+<servlet>
+		<servlet-name>logout</servlet-name>
+		<jsp-file>/logout.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
+	<!-- ERROR PAGE CFGS  -->
+	<servlet>
+		<servlet-name>errorpage</servlet-name>
+		<jsp-file>/error.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>Result</servlet-name>
+		<display-name>Result</display-name>
+		<description></description>
+		<servlet-class>com.intEthic.controller.Result</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>errorpage</servlet-name>
+		<url-pattern>/error</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Result</servlet-name>
+		<url-pattern>/Result</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>
