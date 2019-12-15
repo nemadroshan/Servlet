@@ -1,0 +1,6 @@
+create table user_table(name varchar2(20),lastname varchar2(20),username varchar2(20),password varchar2(20),role varchar2(20));
+
+
+insert into user_table('roshan','nemad','nrn3096','1234','admin');
+
+insert into user_table values('raj','sharma','sharmaji','1234','manager');
