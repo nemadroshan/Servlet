@@ -6,6 +6,10 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style>
+a{
+  text-decoration: none;
+  color: white;
+}
 body{
 background-image: url('https://previews.123rf.com/images/tharinsinlapachai/tharinsinlapachai1710/tharinsinlapachai171000019/87333144-blurred-of-wrinkled-paper-for-background-color-filter-pastel-.jpg');
 }

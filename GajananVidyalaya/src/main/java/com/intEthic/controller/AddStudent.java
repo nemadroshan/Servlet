@@ -33,7 +33,7 @@ public class AddStudent extends HttpServlet {
 		dto.setEnglish_marks(Integer.parseInt(req.getParameter("em")));
 		dto.setPhysics_marks(Integer.parseInt(req.getParameter("pm")));
 		dto.setFname(req.getParameter("fname").toLowerCase());
-		dto.setName(req.getParameter("sname").toLowerCase());
+		dto.setName(req.getParameter("sname").toLowerCase()+" "+req.getParameter("lname").toLowerCase());
 
 		// call service methode
 		result = service.addStudent(dto);

@@ -3,6 +3,7 @@ package com.intEthic.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,12 +22,15 @@ public class deleteStudent extends HttpServlet {
 		StudentService service = new StudentServiceImpl();
 		pw = response.getWriter();
 		response.setContentType("text/html");
+		RequestDispatcher rd =null;
 		rollNum = Integer.parseInt(request.getParameter("rollnum"));
 		try {
 			result = service.deleteStudentByRollNum(rollNum);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+			rd = request.getRequestDispatcher("/index.html");
+			rd.forward(request, response);
 		}
 		pw.println(result);
 	}

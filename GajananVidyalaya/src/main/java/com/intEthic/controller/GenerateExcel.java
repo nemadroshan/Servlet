@@ -1,4 +1,6 @@
 package com.intEthic.controller;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import java.util.List;
@@ -30,8 +32,9 @@ public class GenerateExcel extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		StudentService service = new StudentServiceImpl();
 		List<StudentDTO> allStudent = null;
+		FileOutputStream fos = new FileOutputStream(new File("report.xls"));
 		int sr = 1;
-		int rowNum = 0;
+		int rowNum = 1;
 		int cellNUm = 0;
 		Workbook workbook = null;
 		// set the response content type to PDF
@@ -71,10 +74,11 @@ public class GenerateExcel extends HttpServlet {
 			cell = row.createCell(cellNUm++);
 			cell.setCellValue("Percentage");
 
-			for (StudentDTO dto : allStudent) {
+			for (int i=0;i<allStudent.size();i++) {
+				StudentDTO dto = allStudent.get(i);
 				int rowCount = 1;
 				cellNUm = 0;
-				Row row1 = sheet.createRow(rowNum++);
+				Row row1 = sheet.createRow(++rowNum);
 				cell = row.createCell(cellNUm++);
 				cell.setCellValue(rowCount);
 
@@ -102,7 +106,7 @@ public class GenerateExcel extends HttpServlet {
 				cell = row.createCell(cellNUm++);
 				
 				workbook.write(response.getOutputStream());
-				return;
+				dto =null;
 			}
 			
 			// let write to file

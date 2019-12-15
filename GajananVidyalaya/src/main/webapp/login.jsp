@@ -12,11 +12,16 @@
 * {
 	box-sizing: border-box;
 }
+a{
+  text-decoration: none;
+  color: white;
+}
 
 body {
 	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;	
-  background-image: url('https://previews.123rf.com/images/tharinsinlapachai/tharinsinlapachai1710/tharinsinlapachai171000019/87333144-blurred-of-wrinkled-paper-for-background-color-filter-pastel-.jpg');
+  background-color: #211900;
+background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
 }
 
 .topnav {
