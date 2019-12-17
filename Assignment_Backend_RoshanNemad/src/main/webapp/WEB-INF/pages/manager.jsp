@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+	pageEncoding="ISO-8859-1"%>
+<%@page isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +9,12 @@
 <title>Manager Dashboard</title>
 </head>
 <body>
-		<h2>	Welcome Manager</h2> : <br>
-	 <h3>${firstName}</h3>  &nbsp;<h3>${lastName}</h3>
+	<h2>Welcome Manager</h2>
+	:
+	<br>
+	<c:out value="${user.firstName}"></c:out>
+	<h3>${firstName}</h3>
+	&nbsp;
+	<h3>${lastName}</h3>
 </body>
 </html>

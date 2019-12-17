@@ -7,39 +7,48 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
+	<context:component-scan base-package="com.locationGuru.controller"/>
+
 	<bean
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
-				<prop key="login.htm">svc</prop> 
+				<prop key="login.htm">svc</prop>
 				<prop key="admin.htm">pvc1</prop>
 				<prop key="manager.htm">pvc2</prop>
 				<prop key="employee.htm">pvc3</prop>
 			</props>
 		</property>
 	</bean>
-	<bean id= "svc"  class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
-	
+
+	<bean id="svc"
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<mvc:annotation-driven />
+
+	<bean id="sc"
+		class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
 	<bean id="pvc1"
 		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
 		<property name="viewName" value="admin" />
 	</bean>
-	
+
 	<bean id="pvc2"
 		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
 		<property name="viewName" value="manager" />
 	</bean>
-	
+
 	<bean id="pvc3"
 		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
 		<property name="viewName" value="employee" />
 	</bean>
-	
-	<!-- View Resolver  -->
-	
-	<bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/pages/"/>
-		<property name="suffix" value=".jsp"></property>
+
+	<!-- View Resolver -->
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".jsp"/>
 	</bean>
-	<context:component-scan base-package="com.locationGuru.controller"/>
+	<!-- <context:component-scan
+		base-package="com.locationGuru.controller" /> -->
 </beans>

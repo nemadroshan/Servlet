@@ -17,6 +17,9 @@ public class LoginServiceImpl implements LoginService {
 	 * public void setDao(LoginDao dao) { this.dao = dao; }
 	 */
 	
+	public LoginServiceImpl() {
+	     System.out.println("service : zeroparam constructor");
+	}
 
 	@Override
 	public boolean validate(String username, String password) throws Exception {

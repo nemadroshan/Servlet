@@ -1,6 +1,7 @@
 package com.locationGuru.dao;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,10 +17,14 @@ public class LoginDaoImpl implements LoginDao {
 	private static final String GETROLE_QUERY = " SELECT ROLE FROM USER_TABLE WHERE USERNAME =? AND PASSWORD = ?";
 	private static final String GETFULLNAME_QUERY ="SELECT NAME , LASTNAME FROM USER_TABLE WHERE USERNAME = ?";
 	
+	public LoginDaoImpl() {
+			System.out.println("dao : zero param constructor");
+	}
+	
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 	Connection con = null;
 	Class.forName("oracle.jdbc.driver.OracleDriver");
-		con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521", "scott", "tiger");
+		con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger");
 		if(con == null)
 			System.out.println("Connectionn is not established");
 		else
@@ -61,13 +66,13 @@ public class LoginDaoImpl implements LoginDao {
 	
 		if(rs != null) 
 			while (rs.next()) {
-				role = rs.getString(1);
+				role = rs.getString("role");
 			}
 		con.close();
 		return role;
 	}
 
-	@Override
+	//@Override
 	public UserBo getFullName(String username) throws Exception {
 		Connection con =null;
 		PreparedStatement ps = null;
