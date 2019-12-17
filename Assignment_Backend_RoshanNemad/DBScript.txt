@@ -1,6 +1,18 @@
-create table user_table(name varchar2(20),lastname varchar2(20),username varchar2(20),password varchar2(20),role varchar2(20));
+SQL> create table user_table(name varchar2(20),lastname varchar2(20),username varchar2(20),password varchar2(20),role varchar2(20));
 
 
-insert into user_table values('roshan','nemad','nrn3096','1234','admin');
+SQL> insert into user_table values('roshan','nemad','nrn3096','1234','admin');
 
-insert into user_table values('raj','sharma','sharmaji','1234','manager');
+SQL> insert into user_table values('raj','sharma','sharmaji','1234','manager');
+
+SQL> insert into user_table values('rajesh','dagubati','rajesh12','1234','employee');
+
+SQL> select * from user_table;
+
+NAME                 LASTNAME             USERNAME             PASSWORD             ROLE
+-------------------- -------------------- -------------------- -------------------- --------------------
+raj                  sharma               sharmaji             1234                 manager
+nayan                rasekar              nayan                1234                 employee
+roshan               nemad                nrn3096              1234                 admin
+
+SQL>
