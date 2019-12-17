@@ -6,6 +6,8 @@ public class UserBo {
 	private String lastName;
 	private String userName;
 	private String password;
+	private String role;
+	
 	public String getName() {
 		return name;
 	}

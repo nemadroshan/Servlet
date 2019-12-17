@@ -23,6 +23,7 @@ public class LoginServiceImpl implements LoginService {
 
 	@Override
 	public boolean validate(String username, String password) throws Exception {
+		System.out.println("LoginServiceImpl.validate()");
 		int count =0;
 		count = dao.login(username, password);
 		if(count == 0)
@@ -33,6 +34,7 @@ public class LoginServiceImpl implements LoginService {
 
 	@Override
 	public String getRole(String username, String password) throws Exception {
+		System.out.println("LoginServiceImpl.getRole()");
 			String role = null;
 			role = dao.role(username, password);
 			return role;
@@ -40,14 +42,11 @@ public class LoginServiceImpl implements LoginService {
 
 	@Override
 	public UserDTO getFullname(String username) throws Exception {
+		System.out.println("LoginServiceImpl.getFullname()");
 		UserDTO dto = new UserDTO();
 		UserBo bo =null;
 		bo = dao.getFullName(username);
 		BeanUtils.copyProperties(bo, dto);
 		return dto;
 	}
-
-
-	
-	
 }

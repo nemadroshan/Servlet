@@ -34,6 +34,7 @@ public class LoginDaoImpl implements LoginDao {
 	
 	@Override
 	public int login(String username, String password) throws Exception {
+		System.out.println("LoginDaoImpl.login()");
 		Connection con =null;
 		PreparedStatement ps = null;
 		int count = 0;
@@ -50,6 +51,7 @@ public class LoginDaoImpl implements LoginDao {
 
 	@Override
 	public String role(String username, String password) throws Exception {
+		System.out.println("LoginDaoImpl.role()");
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -74,6 +76,7 @@ public class LoginDaoImpl implements LoginDao {
 
 	//@Override
 	public UserBo getFullName(String username) throws Exception {
+		System.out.println("LoginDaoImpl.getFullName()");
 		Connection con =null;
 		PreparedStatement ps = null;
 		UserBo bo =null;

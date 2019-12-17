@@ -9,6 +9,7 @@
 </head>
 <body>
 		<h2>	Welcome Admin</h2> : <br>
-	 <h3>${firstName}</h3>  &nbsp;<h3>${lastName}</h3>
+	 <h3>	<c:out value="${user.name}"></c:out>  <c:out value="${ user.lastName}"></c:out></h3>
+	 <a href="login.htm">Go Back</a>
 </body>
 </html>

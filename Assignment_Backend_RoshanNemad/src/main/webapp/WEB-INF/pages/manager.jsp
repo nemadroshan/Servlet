@@ -9,12 +9,9 @@
 <title>Manager Dashboard</title>
 </head>
 <body>
-	<h2>Welcome Manager</h2>
-	:
+	<h2>Welcome Manager</h2> :
 	<br>
-	<c:out value="${user.firstName}"></c:out>
-	<h3>${firstName}</h3>
-	&nbsp;
-	<h3>${lastName}</h3>
+	<h3><c:out value="${user.name}"></c:out>  <c:out value="${ user.lastName}"></c:out></h3>
+	<a href="login.htm">Go back</a>
 </body>
 </html>
